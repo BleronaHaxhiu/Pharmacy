@@ -13,5 +13,22 @@ router.get('/refresh', refresh)
 router.get('/getAllPharmacies' , getAllPharmacies)
 router.get('/pharmacies/:id', getPharmacyById);
 router.post('/submitLicense', upload, submitLicense);
+router.post('/requestPasswordReset', requestPasswordReset);
+router.post('/resetPassword', resetPassword);
+router.get('/:id/products', getProductsByUserId);
+router.get('/pharmacies/:pharmacyId/products/:productId', getProductsByPharmacyId)
+router.get("/getUserProfileClient", authMiddleware,  getUserProfileClient); 
+router.put("/updateUserProfileClient", authMiddleware,  updateUserProfileClient);
+router.post("/changePasswordClient", authMiddleware, changePasswordClient);
+router.get("/showAllProducts", showAllProducts)
+router.get('/searchProducts', searchProducts)
+router.get('/cartCount', authMiddleware, cartCount)
+
+router.get('/getAllVetura' , getAllVetura)
+router.post('/createVetura' , createVetura)
+
+router.get('/getAllShoferi' , getAllShoferi)
+
+module.exports = router;
 
 
